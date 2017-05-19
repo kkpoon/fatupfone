@@ -3,27 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>JS Bin</title>
-        <!-- CSS Styles -->
-        <style>
-            .speech {
-                border: 1px solid #DDD; width: 300px; padding: 0; margin: 0
-            }
-            .speech input {
-                border: 0; width: 240px; display: inline-block; height: 30px;
-            }
-            .speech img {
-                float: right; width: 40px
-            }
-        </style>
+        <title>Fat Up Fone</title>
     </head>
     <body>
 
         <!-- Search Form -->
         <form id="labnol">
             <div class="speech">
-                <input type="text" name="q" id="transcript" placeholder="Speak" />
-                <img alt="microphone" onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
+                <textarea id="transcript" col="50" row="30">
+                </textarea>
+                <button onclick="startDictation()" type="button">
+                    Speak
+                </button>
             </div>
         </form>
         <script>
@@ -50,6 +41,8 @@
                         recognition.stop();
                     }
 
+                } else {
+                    document.getElementById('transcript').value = "Not supported"
                 }
             }
         </script>
